@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Search Results</h1>
+    <p>Query: {{ query }}</p>
+    <ul>
+        {% for result, similarity_score in results %}
+            <li>
+                <h3>{{ result.title }}</h3>
+                <p>Similarity Score: {{ similarity_score }}</p>
+                <p>{{ result.content }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
